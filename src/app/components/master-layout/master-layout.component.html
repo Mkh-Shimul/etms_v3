@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <!-- Preloader -->
+
+
+  <!-- Navbar -->
+  <app-header></app-header>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer"
+     [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+    <router-outlet></router-outlet>
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->

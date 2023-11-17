@@ -1,0 +1,82 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Employee Create</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+          <li class="breadcrumb-item active">Employee Create</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <!-- general form elements -->
+      <div class="card card-primary">
+        <!-- <div class="card-header">
+    <h3 class="card-title">Quick Example</h3>
+  </div> -->
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form novalidate (submit)="createEmployee()">
+          <div class="card-body">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-4"></div>
+                <div class="col-3">
+                  <label for="BusNumber">Gender</label>
+                  <input type="text" class="form-control form-control-sm" [(ngModel)]="employeeRqst.gender"
+                    name="gender" placeholder="Enter employee gender" autocomplete="false">
+                </div>
+                <div class="col-3"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleInputPassword1">First Name</label>
+                  <input type="text" class="form-control form-control-sm" [(ngModel)]="employeeRqst.firstName"
+                    name="firstName" placeholder="Employee First Name" autocomplete="false">
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleInputPassword1">Last Name</label>
+                  <input type="text" class="form-control form-control-sm" [(ngModel)]="employeeRqst.lastName"
+                    name="lastName" placeholder="Employee Last Name" autocomplete="false">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleInputPassword1">Email</label>
+                  <input type="email" class="form-control form-control-sm" [(ngModel)]="employeeRqst.email" name="email"
+                    placeholder="Employee Email" autocomplete="false">
+                </div>
+                <div class="col-md-6">
+                  <label for="exampleInputPassword1">Designation</label>
+                  <input type="text" class="form-control form-control-sm" [(ngModel)]="employeeRqst.designation"
+                    name="designation" placeholder="Employee Designation" autocomplete="false">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-body -->
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+          </div>
+        </form>
+      </div>
+      <!-- /.card -->
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Bus Create</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">Bus Create</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+      <!-- <div class="card-header">
+        <h3 class="card-title">Quick Example</h3>
+      </div> -->
+      <!-- /.card-header -->
+      <!-- form start -->
+      <form novalidate (submit)="createBus()">
+        <div class="card-body">
+          <div class="form-group">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-3">
+                    <label for="BusNumber">Bus Number</label>
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="busRqst.busNumber" name="busNumber"
+                     placeholder="Enter Bus Number" autocomplete="false">
+                </div>
+                <div class="col-3"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="exampleInputPassword1">Start Place</label>
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="busRqst.startFrom" name="startFrom"
+                    placeholder="Bus Stat Place" autocomplete="false">
+                </div>
+                <div class="col-md-6">
+                    <label for="exampleInputPassword1">Stoppage</label>
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="busRqst.stopAt" name="stopAt"
+                     placeholder="Bus Stoppage" autocomplete="false">
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="exampleInputPassword1">Start Time</label>
+                    <input type="time" class="form-control form-control-sm" [(ngModel)]="busRqst.startTime" name="startTime" 
+                    placeholder="Bus Stat Time" onclick="this.showPicker()" autocomplete="false">
+                </div>
+                <div class="col-md-6">
+                    <label for="exampleInputPassword1">Stoppage</label>
+                    <input type="time" class="form-control form-control-sm" [(ngModel)]="busRqst.endTime" name="endTime" 
+                    placeholder="Bus Stop Time" onclick="this.showPicker()" autocomplete="false">
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.card -->
+
+  </div>
+  </div>
+  </section>
+
