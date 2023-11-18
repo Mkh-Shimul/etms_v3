@@ -35,7 +35,9 @@
               "src/assets/AdminAssets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
               "src/assets/AdminAssets/plugins/daterangepicker/daterangepicker.css",
               "src/assets/AdminAssets/plugins/summernote/summernote-bs4.min.css",
-              "./node_modules/ngx-spinner/animations/timer.css"
+              "./node_modules/ngx-spinner/animations/timer.css",
+              "src/assets/AdminAssets/plugins/select2/css/select2.min.css",
+              "src/assets/AdminAssets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
             ],
             "scripts": [
               "src/assets/AdminAssets/plugins/jquery/jquery.min.js",
@@ -65,7 +67,8 @@
               "src/assets/AdminAssets/plugins/datatables-buttons/js/buttons.colVis.min.js",
               "src/assets/AdminAssets/dist/js/adminlte.js",
               "src/assets/AdminAssets/dist/js/demo.js",
-              "src/assets/AdminAssets/dist/js/pages/dashboard.js"
+              "src/assets/AdminAssets/dist/js/pages/dashboard.js",
+              "src/assets/AdminAssets/plugins/select2/js/select2.full.min.js"
             ]
           },
           "configurations": {
