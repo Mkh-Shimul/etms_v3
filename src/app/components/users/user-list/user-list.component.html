@@ -1,0 +1,58 @@
+<section>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">User(s) List</h1>
+                    <a routerLink="/users/create" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>
+                        &nbsp;Create</a>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a [routerLink]="['/dashboard']">Home</a></li>
+                        <li class="breadcrumb-item active">User List</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered table-sm text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usr of userList; let i = index;">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ usr.firstName }}</td>
+                            <td>{{ usr.lastName }}</td>
+                            <td>{{ usr.email }}</td>
+                            <td>{{ usr.designation }}</td>
+                            <td>{{ usr.gender }}</td>
+                            <td>
+                                <a [routerLink]="['/employee/edit', usr.id]" class="btn btn-info btn-sm">Edit</a> |
+                                <button (click)="deleteUser(usr.id)" class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p *ngIf="userList.length == 0">No Data to show</p>
+            </div>
+        </div>
+    </div>
+</section>
