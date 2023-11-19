@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +8,22 @@ import { Component } from '@angular/core';
 })
 export class UserListComponent {
 
-  userList: any[];
-  constructor(){this.userList = []}
+  userList: any[] = [];
+  constructor(private _http: HttpClient){}
+
+  ngOnInit() {
+    this.getUserList()
+  }
+
+  getUserList() {
+    this._http.get("https://localhost:44331/api/User").subscribe({
+      next: (response) => {
+        this.userList.push(response)
+        console.log(response);
+      }, error: (err) => {
+        console.log(err);
+      }
+    })
+  }
   deleteUser(id: number){}
 }
