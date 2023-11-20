@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Bus } from 'src/app/models/bus.model';
@@ -11,7 +10,7 @@ import { BusService } from 'src/app/services/bus.service';
 })
 export class BusListComponent {
   buslist: Bus[] = [];
-  constructor(private _http: HttpClient, private _busService: BusService, private _spinner: NgxSpinnerService) {}
+  constructor(private _busService: BusService, private _spinner: NgxSpinnerService) {}
 
   ngOnInit() {
     this.getAllBuses()
