@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { userDTO } from 'src/app/models/authentication/user-dto.model';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -16,7 +17,7 @@ export class UserCreateComponent {
   usrRqst: userDTO;
 
   constructor(private _userService: UserService, private _toast: NgToastService
-    , private _route: Router){
+    , private _route: Router, private _spinner: NgxSpinnerService){
     this.usrRqst = new userDTO();
   }
 
@@ -38,12 +39,15 @@ export class UserCreateComponent {
   }
 
   createUser() {
+    this._spinner.show();
     this._userService.CreateUser(this.usrRqst).subscribe({
-      next: (response) => {
+      next: () => {
         this._toast.success({ detail: "Success", summary: "User Created Successully"});
         this._route.navigate(['/users']);
-      }, error: (err) => {
+      }, error: () => {
         this._toast.error({ detail: "Failed", summary: "User Creation Failed"});
+      }, complete: () => {
+        this._spinner.hide();
       }
     })
   }

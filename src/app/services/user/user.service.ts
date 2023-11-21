@@ -25,6 +25,14 @@ export class UserService {
     return this._http.get<User>(`${this.apiUrl}User/${id}`);
   }
 
+  UpdateUserById(userdata: any, id: number): Observable<User> {
+    return this._http.put<User>(`${this.apiUrl}User/${id}`, userdata)
+  }
+
+  DeleteUser(id: number): Observable<User> {
+    return this._http.delete<User>(`${this.apiUrl}User/${id}`);
+  }
+
   GetAllUserRoles(): Observable<any> {
     return this._http.get(`${this.apiUrl}User/GetAllUserRoles`);
   }
