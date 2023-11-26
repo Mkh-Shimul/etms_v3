@@ -14,7 +14,8 @@ export class DashboardComponent {
     let token = localStorage.getItem('token');
     let decodejwt = this.jwtService.DecodeToken(token);
     this.userName = this.jwtService.GetUser();
+    var userrole = this.jwtService.GetUserRoleId();
 
-    console.log(decodejwt, this.userName);
+    console.log(decodejwt, this.userName, userrole);
   }
 }
