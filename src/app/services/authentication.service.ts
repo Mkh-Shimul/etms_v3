@@ -19,4 +19,8 @@ export class AuthenticationService {
   public Login(userRqst: userDTO): Observable<any> {
     return this._http.post<any>(this.apiUrl + "Authentication/login", userRqst);
   }
+
+  public GetMenubyRoleId(userRoleId: number): Observable<any> {
+    return this._http.get<any>(`${this.apiUrl}User/GetMenubyRoleId/${userRoleId}`);
+  }
 }
