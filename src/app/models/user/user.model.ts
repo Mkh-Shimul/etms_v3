@@ -7,4 +7,5 @@ export class User {
     roleName!: number;
     userRoleId!: number;
     isActive!: boolean;
+    isEmployee!: boolean
 }
