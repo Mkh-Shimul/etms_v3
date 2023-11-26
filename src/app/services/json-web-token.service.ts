@@ -24,4 +24,8 @@ export class JsonWebTokenService {
   GetUser() {
     return this.decodedToken ? this.decodedToken["UserName"] : null;
   }
+
+  GetUserRoleId() {
+    return this.decodedToken ? this.decodedToken["UserRole"] : null;
+  }
 }
