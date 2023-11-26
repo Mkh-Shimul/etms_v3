@@ -44,10 +44,10 @@ export class UserCreateComponent {
       next: () => {
         this._toast.success({ detail: "Success", summary: "User Created Successully"});
         this._route.navigate(['/users']);
-      }, error: () => {
-        this._toast.error({ detail: "Failed", summary: "User Creation Failed"});
-      }, complete: () => {
         this._spinner.hide();
+      }, error: () => {
+        this._spinner.hide();
+        this._toast.error({ detail: "Failed", summary: "User Creation Failed"});
       }
     })
   }
