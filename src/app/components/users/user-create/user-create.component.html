@@ -2,10 +2,14 @@
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
-            <div class="col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <h1>User Create</h1>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
                     <li class="breadcrumb-item active">User Create</li>
@@ -58,8 +62,8 @@
                         </div>
                         <div class="form-check form-switch" style="padding-left: 40px;">
                             <input type="checkbox" class="form-check-input" role="switch" id="exampleCheck1"
-                                [(ngModel)]="usrRqst.isActive" name="isActive">
-                            <label class="form-check-label" for="exampleCheck1">Active</label>
+                                [(ngModel)]="usrRqst.isEmployee" name="isEmployee">
+                            <label class="form-check-label" for="exampleCheck1">Employee</label>
                         </div>
                     </div>
                     <!-- /.card-body -->
