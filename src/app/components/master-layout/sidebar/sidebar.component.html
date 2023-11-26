@@ -22,31 +22,11 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a [routerLink]="['/dashboard']" class="nav-link" routerLinkActive="active">
+          <li class="nav-item" *ngFor="let menu of menuList">
+            <a [routerLink]="[menu.menuUrl]" class="nav-link" routerLinkActive="active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Dashboard</p>
+              <p>{{ menu.menuName }}</p>
               
-            </a>
-          </li>
-          <li class="nav-item">
-            <a [routerLink]="['/bus']" class="nav-link" routerLinkActive="active">
-              <i class="fas fa-bus"></i> 
-              <p> Buses </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a [routerLink]="['/employee']" class="nav-link" routerLinkActive="active">
-              <!-- <i class="fas fa-bus"></i>  -->
-              <i class="fas fa-house-user"></i>
-              <p> Employee </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a [routerLink]="['/users']" class="nav-link" routerLinkActive="active">
-              <!-- <i class="fas fa-bus"></i>  -->
-              <i class="fas fa-house-user"></i>
-              <p> User </p>
             </a>
           </li>
         </ul>
