@@ -5,4 +5,5 @@ export class userDTO {
     password!: string;
     userRoleId!: number;
     isActive!: boolean;
+    isEmployee: boolean = false
 }
