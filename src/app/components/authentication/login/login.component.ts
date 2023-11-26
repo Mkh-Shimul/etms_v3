@@ -24,7 +24,7 @@ export class LoginComponent {
     .subscribe({
       next: (response) => {
         localStorage.setItem('token', response.token);
-        // localStorage.setItem('userInfo', response.userinfo);
+        localStorage.setItem('UserRole', response.userRole);
         this._route.navigate(['dashboard']);
         this._spinner.hide();
         this._toast.success({ detail: "Success", summary: "Welcome to the dashboard"})
