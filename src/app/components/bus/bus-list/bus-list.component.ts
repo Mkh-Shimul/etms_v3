@@ -31,14 +31,19 @@ export class BusListComponent {
   }
 
   deleteBus(id: number){
-    this._busService.DeleteBus(id).subscribe({
-      next: (response) => {
-        this.getAllBuses()
-        console.log(response);
-      }, 
-      error: (err) => {
-        console.log(err)
-      }
-    })
+    const result = confirm("Are you sure?");
+    if (result) {
+      this._busService.DeleteBus(id).subscribe({
+        next: (response) => {
+          this.getAllBuses()
+          console.log(response);
+        }, 
+        error: (err) => {
+          console.log(err)
+        }
+      })
+    } else {
+      return;
+    }
   }
 }

@@ -36,14 +36,19 @@ export class UserListComponent {
     });
   }
   deleteUser(id: number){
-    this._userService.DeleteUser(id).subscribe({
-      next: (response) => {
-        this._toast.success({ detail: "Success", summary: "User Successfully Deleted"});
-        this.getUserList()
-      }, 
-      error: (err) => {
-        this._toast.error({ detail: "Error", summary: "User Delete Failed"});
-      }
-    })
+    const result = confirm("Are you sure?");
+    if(result) {
+      this._userService.DeleteUser(id).subscribe({
+        next: (response) => {
+          this._toast.success({ detail: "Success", summary: "User Successfully Deleted"});
+          this.getUserList()
+        }, 
+        error: (err) => {
+          this._toast.error({ detail: "Error", summary: "User Delete Failed"});
+        }
+      })
+    } else {
+      return;
+    }
   }
 }

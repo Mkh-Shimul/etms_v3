@@ -25,13 +25,19 @@ export class EmployeeListComponent {
     })
   }
 
-  deleteEmployee(id: number) { 
-    this._employeeService.DeleteEmployee(id).subscribe({
-      next: () => {
-        this.getAllEmployee();
-      }, error: (err) => {
-        console.log(err);
-      }
-    })
+  deleteEmployee(id: number) {
+    var result = confirm("Are you sure?");
+    if (result) {
+      this._employeeService.DeleteEmployee(id).subscribe({
+        next: () => {
+          this.getAllEmployee();
+        }, error: (err) => {
+          console.log(err);
+        }
+      })
+    } else {
+      return;
+    }
+
   }
 }
