@@ -32,4 +32,8 @@ export class EmployeeService {
     return this._http.delete<Employee>(`${this.apiUrl}Employee/${id}`);
   }
 
+  CreateEmployeeFromExcel(formData: FormData): Observable<Employee> {
+    return this._http.post<Employee>(`${this.apiUrl}Employee/CreateEmployeeFromExcel`, formData);
+  }
+
 }
